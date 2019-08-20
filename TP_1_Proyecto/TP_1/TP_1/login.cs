@@ -22,7 +22,6 @@ namespace TP_1
             this.Close();
         }
 
-        //Boton Ingresar
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "")
