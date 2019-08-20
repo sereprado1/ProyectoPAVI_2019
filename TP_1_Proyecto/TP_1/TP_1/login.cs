@@ -19,6 +19,7 @@ namespace TP_1
         //Boton clic
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Seguro desea salir", "Atencion", MessageBoxButtons.YesNo);
             this.Close();
         }
 
