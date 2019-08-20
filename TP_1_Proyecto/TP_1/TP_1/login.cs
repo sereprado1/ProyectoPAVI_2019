@@ -16,5 +16,26 @@ namespace TP_1
         {
             InitializeComponent();
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un Usuario", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtContraseña.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un Contraseña", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            MessageBox.Show("Bienvenido " + txtUsuario.Text, "Iniciando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close() ;
+        }
     }
 }
