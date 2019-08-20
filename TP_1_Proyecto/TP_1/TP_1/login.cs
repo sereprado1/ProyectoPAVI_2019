@@ -16,7 +16,7 @@ namespace TP_1
         {
             InitializeComponent();
         }
-
+        //Boton clic
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
