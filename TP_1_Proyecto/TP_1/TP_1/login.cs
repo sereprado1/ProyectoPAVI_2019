@@ -28,7 +28,7 @@ namespace TP_1
         {
             if (txtUsuario.Text == "")
             {
-                MessageBox.Show("Debe ingresar un Usuario", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error! Debe ingresar un Usuario", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtContraseña.Text == "")
