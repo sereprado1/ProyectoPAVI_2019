@@ -38,6 +38,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbFuncion = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirigente)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 35);
+            this.label2.Location = new System.Drawing.Point(14, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 2;
@@ -71,34 +73,36 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(102, 37);
+            this.txtApellido.Location = new System.Drawing.Point(102, 44);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(203, 20);
             this.txtApellido.TabIndex = 4;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbFuncion);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtApellido);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 65);
+            this.panel1.Size = new System.Drawing.Size(308, 107);
             this.panel1.TabIndex = 5;
             // 
             // dgvDirigente
             // 
             this.dgvDirigente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDirigente.Location = new System.Drawing.Point(12, 150);
+            this.dgvDirigente.Location = new System.Drawing.Point(12, 188);
             this.dgvDirigente.Name = "dgvDirigente";
-            this.dgvDirigente.Size = new System.Drawing.Size(308, 298);
+            this.dgvDirigente.Size = new System.Drawing.Size(308, 275);
             this.dgvDirigente.TabIndex = 6;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnBuscar.Location = new System.Drawing.Point(234, 113);
+            this.btnBuscar.Location = new System.Drawing.Point(234, 150);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(86, 32);
             this.btnBuscar.TabIndex = 7;
@@ -109,7 +113,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnLimpiar.Location = new System.Drawing.Point(12, 113);
+            this.btnLimpiar.Location = new System.Drawing.Point(12, 150);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(79, 32);
             this.btnLimpiar.TabIndex = 8;
@@ -128,11 +132,29 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Función";
+            // 
+            // cmbFuncion
+            // 
+            this.cmbFuncion.FormattingEnabled = true;
+            this.cmbFuncion.Location = new System.Drawing.Point(102, 81);
+            this.cmbFuncion.Name = "cmbFuncion";
+            this.cmbFuncion.Size = new System.Drawing.Size(159, 21);
+            this.cmbFuncion.TabIndex = 6;
+            // 
             // ConsultarDirigente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 460);
+            this.ClientSize = new System.Drawing.Size(332, 475);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);
@@ -140,6 +162,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ConsultarDirigente";
             this.Text = "Consultar Dirigente";
+            this.Load += new System.EventHandler(this.ConsultarDirigente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirigente)).EndInit();
@@ -158,5 +181,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.ComboBox cmbFuncion;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -32,22 +32,29 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            string strSql = "SELECT TOP 20 * FROM Dirigente WHERE 1=1 ";
+            string strSql = "SELECT TOP 20 D.nro_doc_diri, D.nombre, D.apellido, D.telefono, D.direccion FROM GrupoScoutProyecto.dbo.Dirigente D JOIN GrupoScoutProyecto.dbo.ComunidadXDirigente CD ON D.id_tipo_doc_diri = CD.id_tipo_doc_diri AND D.nro_doc_diri = CD.nro_doc_diri WHERE 1 = 1 ";
 
             Dictionary<string, object> parametros = new Dictionary<string, object>();
           
             if (!string.IsNullOrEmpty(txtNombre.Text))
             {
                 var nombre = txtNombre.Text;
-                strSql += "AND (nombre=@nombre) ";
+                strSql += "AND (D.nombre=@nombre) ";
                 parametros.Add("nombre", nombre);
             }
 
             if (!string.IsNullOrEmpty(txtApellido.Text))
             {
                 var apellido = txtApellido.Text;
-                strSql += "AND (apellido=@apellido) ";
+                strSql += "AND (D.apellido=@apellido) ";
                 parametros.Add("apellido", apellido);
+            }
+
+            if (!string.IsNullOrEmpty(cmbFuncion.Text))
+            {
+                var idFuncion = cmbFuncion.SelectedValue.ToString();
+                strSql += "AND (CD.id_funcion=@idFuncion) ";
+                parametros.Add("idFuncion", idFuncion);
             }
 
             dgvDirigente.DataSource = Clases.ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
@@ -68,5 +75,12 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
             txtApellido.Clear();
             txtNombre.Focus();
         }
+
+        private void ConsultarDirigente_Load(object sender, EventArgs e)
+        {
+            LlenarCombo(cmbFuncion, Clases.ConexionBD.GetConexionBD().ConsultaSQL("Select * from Funcion"), "descripcion", "id_funcion");
+
+        }
+
     }
 }
