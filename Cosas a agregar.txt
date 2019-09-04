@@ -1,3 +1,6 @@
 Agregar tablas USUARIO - PERFIL - PERMISO
-Agregar combos
+Agregar campos BORRADO en todas las tablas (Borrado lógico) y en las consultas "WHERE borrado = 0 (no esta borrado)
 
+
+Modificar la grilla (Clase 6A - manejo de grilla)
+Leer, traer dudas (Clase 6B - Capas)
