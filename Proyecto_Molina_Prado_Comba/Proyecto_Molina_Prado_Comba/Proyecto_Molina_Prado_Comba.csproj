@@ -46,48 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formularios\frmLogin.cs">
+    <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="formularios\Dirigente\ConsultarDirigente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmLogin.Designer.cs">
+    <Compile Include="formularios\Dirigente\ConsultarDirigente.Designer.cs">
+      <DependentUpon>ConsultarDirigente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularios\frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularios\frmDirigente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\frmDirigente.Designer.cs">
-      <DependentUpon>frmDirigente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formularios\frmLogin.resx">
+    <EmbeddedResource Include="formularios\Dirigente\ConsultarDirigente.resx">
+      <DependentUpon>ConsultarDirigente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmDirigente.resx">
-      <DependentUpon>frmDirigente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -98,7 +100,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Clases\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

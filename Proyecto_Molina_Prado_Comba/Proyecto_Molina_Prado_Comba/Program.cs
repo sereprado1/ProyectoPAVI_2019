@@ -16,7 +16,7 @@ namespace Proyecto_Molina_Prado_Comba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new formularios.frmPrincipal());
         }
     }
 }
