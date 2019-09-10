@@ -30,7 +30,11 @@ namespace Proyecto_Molina_Prado_Comba.formularios
             login.ShowDialog();
         }
 
-        
-        
+        private void ConsultarDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formularios.Descuento.frmConsultarDescuento frmConsultarDescuento = new formularios.Descuento.frmConsultarDescuento();
+            frmConsultarDescuento.ShowDialog();
+
+        }
     }
 }

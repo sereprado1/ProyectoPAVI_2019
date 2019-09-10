@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="formularios\Descuento\frmConsultarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Descuento\frmConsultarDescuento.Designer.cs">
+      <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Dirigente\ConsultarDirigente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,14 +71,11 @@
     <Compile Include="formularios\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Descuento\frmDescuento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Descuento\frmDescuento.Designer.cs">
-      <DependentUpon>frmDescuento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formularios\Descuento\frmConsultarDescuento.resx">
+      <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Dirigente\ConsultarDirigente.resx">
       <DependentUpon>ConsultarDirigente.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,9 +84,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Descuento\frmDescuento.resx">
-      <DependentUpon>frmDescuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
