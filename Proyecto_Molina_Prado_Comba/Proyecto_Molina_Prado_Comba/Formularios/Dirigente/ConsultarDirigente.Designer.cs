@@ -34,12 +34,12 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbFuncion = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.dgvDirigente = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbFuncion = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirigente)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 107);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cmbFuncion
+            // 
+            this.cmbFuncion.FormattingEnabled = true;
+            this.cmbFuncion.Location = new System.Drawing.Point(102, 81);
+            this.cmbFuncion.Name = "cmbFuncion";
+            this.cmbFuncion.Size = new System.Drawing.Size(159, 21);
+            this.cmbFuncion.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Función";
             // 
             // dgvDirigente
             // 
@@ -98,6 +117,7 @@
             this.dgvDirigente.Name = "dgvDirigente";
             this.dgvDirigente.Size = new System.Drawing.Size(308, 275);
             this.dgvDirigente.TabIndex = 6;
+            this.dgvDirigente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDirigente_CellContentClick);
             // 
             // btnBuscar
             // 
@@ -131,24 +151,6 @@
             this.btnVolver.TabIndex = 9;
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Función";
-            // 
-            // cmbFuncion
-            // 
-            this.cmbFuncion.FormattingEnabled = true;
-            this.cmbFuncion.Location = new System.Drawing.Point(102, 81);
-            this.cmbFuncion.Name = "cmbFuncion";
-            this.cmbFuncion.Size = new System.Drawing.Size(159, 21);
-            this.cmbFuncion.TabIndex = 6;
             // 
             // ConsultarDirigente
             // 
