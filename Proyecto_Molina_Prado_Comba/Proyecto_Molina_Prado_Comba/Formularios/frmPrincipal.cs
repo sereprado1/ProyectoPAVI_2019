@@ -36,5 +36,11 @@ namespace Proyecto_Molina_Prado_Comba.formularios
             frmConsultarDescuento.ShowDialog();
 
         }
+
+        private void consultarAfiliaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formularios.Afiliacion.frmConsultarAfiliado frmConsultarAfiliado = new formularios.Afiliacion.frmConsultarAfiliado();
+            frmConsultarAfiliado.ShowDialog();
+        }
     }
 }
