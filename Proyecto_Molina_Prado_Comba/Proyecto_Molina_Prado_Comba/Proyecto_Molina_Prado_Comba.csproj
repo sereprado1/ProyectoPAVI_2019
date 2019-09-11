@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="formularios\Afiliacion\frmConsultarAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Afiliacion\frmConsultarAfiliado.Designer.cs">
+      <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Descuento\frmConsultarDescuento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formularios\Afiliacion\frmConsultarAfiliado.resx">
+      <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Descuento\frmConsultarDescuento.resx">
       <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
     </EmbeddedResource>
