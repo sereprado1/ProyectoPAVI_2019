@@ -238,25 +238,26 @@
             // ingresarAfiliaciónToolStripMenuItem
             // 
             this.ingresarAfiliaciónToolStripMenuItem.Name = "ingresarAfiliaciónToolStripMenuItem";
-            this.ingresarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.ingresarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresarAfiliaciónToolStripMenuItem.Text = "Ingresar afiliación";
             // 
             // consultarAfiliaciónToolStripMenuItem
             // 
             this.consultarAfiliaciónToolStripMenuItem.Name = "consultarAfiliaciónToolStripMenuItem";
-            this.consultarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.consultarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarAfiliaciónToolStripMenuItem.Text = "Consultar afiliación";
+            this.consultarAfiliaciónToolStripMenuItem.Click += new System.EventHandler(this.consultarAfiliaciónToolStripMenuItem_Click);
             // 
             // modificarAfiliaciónToolStripMenuItem
             // 
             this.modificarAfiliaciónToolStripMenuItem.Name = "modificarAfiliaciónToolStripMenuItem";
-            this.modificarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.modificarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarAfiliaciónToolStripMenuItem.Text = "Modificar afiliación";
             // 
             // eliminarAfiliaciónToolStripMenuItem
             // 
             this.eliminarAfiliaciónToolStripMenuItem.Name = "eliminarAfiliaciónToolStripMenuItem";
-            this.eliminarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.eliminarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarAfiliaciónToolStripMenuItem.Text = "Eliminar afiliación";
             // 
             // descuentoToolStripMenuItem
