@@ -42,5 +42,10 @@ namespace Proyecto_Molina_Prado_Comba.formularios
             formularios.Afiliacion.frmConsultarAfiliado frmConsultarAfiliado = new formularios.Afiliacion.frmConsultarAfiliado();
             frmConsultarAfiliado.ShowDialog();
         }
+
+        private void ingresarDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

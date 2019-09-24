@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capa de Acceso a Datos\ADDescuento.cs" />
     <Compile Include="Capa de Acceso a Datos\ADdirigente.cs" />
     <Compile Include="Capa de Acceso a Datos\ADUsuario.cs" />
     <Compile Include="Capa de Acceso a Datos\ConexionBD.cs" />
+    <Compile Include="Capa de Logica de Negocio\SDescuento.cs" />
     <Compile Include="Capa de Logica de Negocio\SDirigente.cs" />
     <Compile Include="Capa de Logica de Negocio\SUsuario.cs" />
     <Compile Include="Capa GUI\Afiliacion\frmConsultarAfiliado.cs">
@@ -62,6 +64,12 @@
     </Compile>
     <Compile Include="Capa GUI\Descuento\frmConsultarDescuento.Designer.cs">
       <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa GUI\Descuento\frmRegistrarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa GUI\Descuento\frmRegistrarDescuento.Designer.cs">
+      <DependentUpon>frmRegistrarDescuento.cs</DependentUpon>
     </Compile>
     <Compile Include="Capa GUI\Dirigente\frmConsultarDirigente.cs">
       <SubType>Form</SubType>
@@ -96,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\Descuento\frmConsultarDescuento.resx">
       <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa GUI\Descuento\frmRegistrarDescuento.resx">
+      <DependentUpon>frmRegistrarDescuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\Dirigente\frmConsultarDirigente.resx">
       <DependentUpon>frmConsultarDirigente.cs</DependentUpon>

@@ -31,13 +31,13 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvDirigente = new System.Windows.Forms.DataGridView();
+            this.dgvDescuento = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDirigente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDescuento)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,13 +74,13 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // dgvDirigente
+            // dgvDescuento
             // 
-            this.dgvDirigente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDirigente.Location = new System.Drawing.Point(11, 170);
-            this.dgvDirigente.Name = "dgvDirigente";
-            this.dgvDirigente.Size = new System.Drawing.Size(321, 193);
-            this.dgvDirigente.TabIndex = 17;
+            this.dgvDescuento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDescuento.Location = new System.Drawing.Point(11, 170);
+            this.dgvDescuento.Name = "dgvDescuento";
+            this.dgvDescuento.Size = new System.Drawing.Size(321, 193);
+            this.dgvDescuento.TabIndex = 17;
             // 
             // panel1
             // 
@@ -135,11 +135,11 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgvDirigente);
+            this.Controls.Add(this.dgvDescuento);
             this.Controls.Add(this.panel1);
             this.Name = "frmConsultarDescuento";
             this.Text = "frmConsultarDescuento";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDirigente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDescuento)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,7 +151,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvDirigente;
+        private System.Windows.Forms.DataGridView dgvDescuento;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.TextBox txtDescripcion;
