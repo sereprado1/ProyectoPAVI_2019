@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.beneficiariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarBeneficiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -232,32 +231,32 @@
             this.modificarAfiliaciónToolStripMenuItem,
             this.eliminarAfiliaciónToolStripMenuItem});
             this.afiliaciónToolStripMenuItem2.Name = "afiliaciónToolStripMenuItem2";
-            this.afiliaciónToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.afiliaciónToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
             this.afiliaciónToolStripMenuItem2.Text = "Afiliación";
             // 
             // ingresarAfiliaciónToolStripMenuItem
             // 
             this.ingresarAfiliaciónToolStripMenuItem.Name = "ingresarAfiliaciónToolStripMenuItem";
-            this.ingresarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.ingresarAfiliaciónToolStripMenuItem.Text = "Ingresar afiliación";
             // 
             // consultarAfiliaciónToolStripMenuItem
             // 
             this.consultarAfiliaciónToolStripMenuItem.Name = "consultarAfiliaciónToolStripMenuItem";
-            this.consultarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.consultarAfiliaciónToolStripMenuItem.Text = "Consultar afiliación";
             this.consultarAfiliaciónToolStripMenuItem.Click += new System.EventHandler(this.consultarAfiliaciónToolStripMenuItem_Click);
             // 
             // modificarAfiliaciónToolStripMenuItem
             // 
             this.modificarAfiliaciónToolStripMenuItem.Name = "modificarAfiliaciónToolStripMenuItem";
-            this.modificarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.modificarAfiliaciónToolStripMenuItem.Text = "Modificar afiliación";
             // 
             // eliminarAfiliaciónToolStripMenuItem
             // 
             this.eliminarAfiliaciónToolStripMenuItem.Name = "eliminarAfiliaciónToolStripMenuItem";
-            this.eliminarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarAfiliaciónToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.eliminarAfiliaciónToolStripMenuItem.Text = "Eliminar afiliación";
             // 
             // descuentoToolStripMenuItem
@@ -268,7 +267,7 @@
             this.modificarDescuentoToolStripMenuItem,
             this.eliminarDescuentoToolStripMenuItem});
             this.descuentoToolStripMenuItem.Name = "descuentoToolStripMenuItem";
-            this.descuentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.descuentoToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.descuentoToolStripMenuItem.Text = "Descuento";
             // 
             // ingresarDescuentoToolStripMenuItem
@@ -314,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Proyecto_Molina_Prado_Comba.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(898, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

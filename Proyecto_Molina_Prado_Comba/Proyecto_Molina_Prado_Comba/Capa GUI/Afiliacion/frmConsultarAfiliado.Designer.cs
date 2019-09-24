@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultarAfiliado));
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvAfiliacion = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtAño = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAfiliacion)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +42,7 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnVolver.Image = ((System.Drawing.Image)(resources.GetObject("btnVolver.Image")));
+            this.btnVolver.Image = global::Proyecto_Molina_Prado_Comba.Properties.Resources.Boton_Inicio;
             this.btnVolver.Location = new System.Drawing.Point(12, 12);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(31, 34);
@@ -89,6 +88,13 @@
             this.panel1.Size = new System.Drawing.Size(321, 85);
             this.panel1.TabIndex = 21;
             // 
+            // txtAño
+            // 
+            this.txtAño.Location = new System.Drawing.Point(123, 16);
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(181, 20);
+            this.txtAño.TabIndex = 51;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -98,13 +104,6 @@
             this.label3.Size = new System.Drawing.Size(38, 20);
             this.label3.TabIndex = 40;
             this.label3.Text = "Año";
-            // 
-            // txtAño
-            // 
-            this.txtAño.Location = new System.Drawing.Point(123, 16);
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(181, 20);
-            this.txtAño.TabIndex = 51;
             // 
             // frmConsultarAfiliado
             // 
