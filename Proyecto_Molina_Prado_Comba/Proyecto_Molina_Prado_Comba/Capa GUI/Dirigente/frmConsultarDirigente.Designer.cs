@@ -90,7 +90,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 107);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cmbFuncion
             // 
@@ -117,7 +116,6 @@
             this.dgvDirigente.Name = "dgvDirigente";
             this.dgvDirigente.Size = new System.Drawing.Size(308, 275);
             this.dgvDirigente.TabIndex = 6;
-            this.dgvDirigente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDirigente_CellContentClick);
             // 
             // btnBuscar
             // 

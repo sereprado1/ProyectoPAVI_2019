@@ -39,7 +39,7 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Descuento
             }
 
 
-            dgvDirigente.DataSource = Clases.ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
+            dgvDirigente.DataSource = Capa_de_Acceso_a_Datos.ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
             if (dgvDirigente.Rows.Count == 0)
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);

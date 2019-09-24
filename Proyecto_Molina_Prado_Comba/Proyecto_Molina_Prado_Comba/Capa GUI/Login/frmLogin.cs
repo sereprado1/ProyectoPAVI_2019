@@ -8,14 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto_Molina_Prado_Comba.Capa_de_Logica_de_Negocio;
 
 namespace Proyecto_Molina_Prado_Comba.formularios.Login
 {
     public partial class frmLogin : Form
     {
+        private readonly SUsuario sUsuario;
+        public string UsuarioLogueado { get; internal set; }
+
         public frmLogin()
         {
             InitializeComponent();
+            sUsuario = new SUsuario();
+
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -37,9 +43,10 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Login
                 return;
             }
 
-            if (ValidarIngreso(txtUsuario.Text, txtPass.Text))
+            var usr = sUsuario.ValidarUsuario(txtUsuario.Text, txtPass.Text);
+            if (usr != null)
             {
-                MessageBox.Show("Usted a ingresado al sistema.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UsuarioLogueado = usr.NombreUsuario;
                 this.Close();
             }
             else
@@ -48,36 +55,8 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Login
                 txtPass.Focus();
                 MessageBox.Show("Debe ingresar usuario y/o contraseña válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
-
-        public bool ValidarIngreso(string pUsuario, string pPassword)
-        {
-            bool usuarioValido = false;
-            try
-            {
-                String consultaSql = string.Concat(" SELECT * ",
-                                                   "   FROM Usuarios ",
-                                                   "  WHERE usuario =  '", pUsuario, "'");
-
-                DataTable resultado = Clases.ConexionBD.GetConexionBD().ConsultaSQL(consultaSql);
-
-                if (resultado.Rows.Count >= 1)
-                {
-                    if (resultado.Rows[0]["contraseña"].ToString() == pPassword)
-                    {
-                        usuarioValido = true;
-                    }
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(string.Concat("Error de base de datos: ", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return usuarioValido;
-        }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
             this.CenterToParent();

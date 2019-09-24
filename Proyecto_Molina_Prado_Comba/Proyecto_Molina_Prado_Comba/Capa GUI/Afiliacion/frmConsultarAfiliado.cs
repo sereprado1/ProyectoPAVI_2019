@@ -66,14 +66,14 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Afiliacion
             //    var idFuncion = cmbFuncion.SelectedValue.ToString();
             //    strSql += "AND (CD.id_funcion=@idFuncion) ";
             //    parametros.Add("idFuncion", idFuncion);
-        
 
-            dgvAfiliacion.DataSource = Clases.ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
-                if (dgvAfiliacion.Rows.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-           
+
+            // dgvAfiliacion.DataSource = Clases.ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
+            //if (dgvAfiliacion.Rows.Count == 0)
+            //{
+            //  MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+
         }
 
     }

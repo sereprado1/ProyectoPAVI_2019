@@ -46,52 +46,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\ConexionBD.cs" />
-    <Compile Include="formularios\Afiliacion\frmConsultarAfiliado.cs">
+    <Compile Include="Capa de Acceso a Datos\ADdirigente.cs" />
+    <Compile Include="Capa de Acceso a Datos\ADUsuario.cs" />
+    <Compile Include="Capa de Acceso a Datos\ConexionBD.cs" />
+    <Compile Include="Capa de Logica de Negocio\SDirigente.cs" />
+    <Compile Include="Capa de Logica de Negocio\SUsuario.cs" />
+    <Compile Include="Capa GUI\Afiliacion\frmConsultarAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\Afiliacion\frmConsultarAfiliado.Designer.cs">
+    <Compile Include="Capa GUI\Afiliacion\frmConsultarAfiliado.Designer.cs">
       <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\Descuento\frmConsultarDescuento.cs">
+    <Compile Include="Capa GUI\Descuento\frmConsultarDescuento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\Descuento\frmConsultarDescuento.Designer.cs">
+    <Compile Include="Capa GUI\Descuento\frmConsultarDescuento.Designer.cs">
       <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\Dirigente\ConsultarDirigente.cs">
+    <Compile Include="Capa GUI\Dirigente\frmConsultarDirigente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\Dirigente\ConsultarDirigente.Designer.cs">
-      <DependentUpon>ConsultarDirigente.cs</DependentUpon>
+    <Compile Include="Capa GUI\Dirigente\frmConsultarDirigente.Designer.cs">
+      <DependentUpon>frmConsultarDirigente.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frmPrincipal.cs">
+    <Compile Include="Capa GUI\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmPrincipal.Designer.cs">
+    <Compile Include="Capa GUI\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\Login\frmLogin.cs">
+    <Compile Include="Capa GUI\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\Login\frmLogin.Designer.cs">
+    <Compile Include="Capa GUI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Afiliacion.cs" />
+    <Compile Include="Clases\Comunidad.cs" />
+    <Compile Include="Clases\Descuento.cs" />
+    <Compile Include="Clases\Dirigente.cs" />
+    <Compile Include="Clases\Funcion.cs" />
+    <Compile Include="Clases\Perfil.cs" />
+    <Compile Include="Clases\Rama.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formularios\Afiliacion\frmConsultarAfiliado.resx">
+    <EmbeddedResource Include="Capa GUI\Afiliacion\frmConsultarAfiliado.resx">
       <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\Descuento\frmConsultarDescuento.resx">
+    <EmbeddedResource Include="Capa GUI\Descuento\frmConsultarDescuento.resx">
       <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\Dirigente\ConsultarDirigente.resx">
-      <DependentUpon>ConsultarDirigente.cs</DependentUpon>
+    <EmbeddedResource Include="Capa GUI\Dirigente\frmConsultarDirigente.resx">
+      <DependentUpon>frmConsultarDirigente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmPrincipal.resx">
+    <EmbeddedResource Include="Capa GUI\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\Login\frmLogin.resx">
+    <EmbeddedResource Include="Capa GUI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

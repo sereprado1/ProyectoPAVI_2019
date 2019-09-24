@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto_Molina_Prado_Comba.Clases
+namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
 {
     public class ConexionBD
     {
