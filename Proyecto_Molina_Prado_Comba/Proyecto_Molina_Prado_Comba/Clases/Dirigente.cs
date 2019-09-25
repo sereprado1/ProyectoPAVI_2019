@@ -14,5 +14,9 @@ namespace Proyecto_Molina_Prado_Comba.Clases
         public string Apellido { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+        public Funcion funcion { get; set; }
+        public Comunidad Comunidad { get; set; }
+        public Rama rama { get; set; }
+
     }
 }

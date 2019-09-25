@@ -63,6 +63,36 @@ namespace Proyecto_Molina_Prado_Comba.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boton_atras {
+            get {
+                object obj = ResourceManager.GetObject("boton atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Boton_editar {
+            get {
+                object obj = ResourceManager.GetObject("Boton editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Boton_eliminar {
+            get {
+                object obj = ResourceManager.GetObject("Boton eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Boton_Inicio {
             get {
                 object obj = ResourceManager.GetObject("Boton Inicio", resourceCulture);
@@ -73,9 +103,9 @@ namespace Proyecto_Molina_Prado_Comba.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fondo {
+        internal static System.Drawing.Bitmap Boton_nuevo {
             get {
-                object obj = ResourceManager.GetObject("Fondo", resourceCulture);
+                object obj = ResourceManager.GetObject("Boton nuevo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

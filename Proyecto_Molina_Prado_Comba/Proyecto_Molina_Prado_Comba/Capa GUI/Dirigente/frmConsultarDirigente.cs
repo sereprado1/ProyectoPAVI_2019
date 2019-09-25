@@ -25,7 +25,6 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
         private void ConsultarDirigente_Load(object sender, EventArgs e)
         {
             LlenarCombo(cmbFuncion, Capa_de_Acceso_a_Datos.ConexionBD.GetConexionBD().ConsultaSQL("Select * from Funcion"), "descripcion", "id_funcion");
-
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -88,14 +87,16 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
         {
             txtNombre.Clear();
             txtApellido.Clear();
+            cmbFuncion.SelectedValue = -1;
+            dgvDirigente.DataSource = null;
             txtNombre.Focus();
         }
 
-        
+
 
         private void InitializeDataGridView()
         {
-            dgvDirigente.ColumnCount = 6;
+            dgvDirigente.ColumnCount = 9;
             dgvDirigente.ColumnHeadersVisible = true;
 
             dgvDirigente.AutoGenerateColumns = false;
@@ -103,15 +104,13 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
 
             columnHeaderStyle.BackColor = Color.Beige;
-            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
             dgvDirigente.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
-            dgvDirigente.Columns[0].Name = "Tipo Documento";
-            dgvDirigente.Columns[0].DataPropertyName = "id_tipo_doc_diri";
-            dgvDirigente.Columns[0].Width = 50;
+            //dgvDirigente.Columns[0].Name = "Tipo Documento";
+            //dgvDirigente.Columns[0].DataPropertyName = "id_tipo_doc_diri";
 
-            dgvDirigente.Columns[1].Name = "Numero Documento";
-            dgvDirigente.Columns[1].DataPropertyName = "nro_doc_diri";
+            //dgvDirigente.Columns[1].Name = "Numero Documento";
+            //dgvDirigente.Columns[1].DataPropertyName = "nro_doc_diri";
 
             dgvDirigente.Columns[2].Name = "Nombre";
             dgvDirigente.Columns[2].DataPropertyName = "nombre";
@@ -125,9 +124,17 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
             dgvDirigente.Columns[5].Name = "Dirección";
             dgvDirigente.Columns[5].DataPropertyName = "direccion";
 
-            
+            dgvDirigente.Columns[6].Name = "Función";
+            dgvDirigente.Columns[6].DataPropertyName = "funcion";
 
-            
+            dgvDirigente.Columns[7].Name = "Comunidad";
+            dgvDirigente.Columns[7].DataPropertyName = "comunidad";
+
+            dgvDirigente.Columns[8].Name = "Rama";
+            dgvDirigente.Columns[8].DataPropertyName = "rama";
+
+
+
             dgvDirigente.AutoResizeColumnHeadersHeight();
 
             dgvDirigente.AutoResizeRows(
@@ -137,7 +144,24 @@ namespace Proyecto_Molina_Prado_Comba.formularios.Dirigente
         {
             this.Close();
         }
+
+        private void BtnDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvDirigente.CurrentRow != null)
+            {
+                Capa_GUI.Dirigente.frmDetalleConsultarDirigente frmDetalle = new Capa_GUI.Dirigente.frmDetalleConsultarDirigente();
+                Clases.Dirigente selectedItem = (Clases.Dirigente)dgvDirigente.CurrentRow.DataBoundItem;
+                frmDetalle.InicializarDetalleDirigente(selectedItem.TipoDocumento, selectedItem.NumeroDocumento);
+                frmDetalle.ShowDialog();
+            }
+        }
+
+        private void dgvDirigente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDetalle.Enabled = true;
+        }
     }
+    
 
 
 }

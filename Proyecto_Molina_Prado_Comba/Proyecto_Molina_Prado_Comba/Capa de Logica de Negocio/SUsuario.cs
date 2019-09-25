@@ -22,14 +22,51 @@ public class SUsuario
 
     public Usuario ValidarUsuario(string usuario, string password)
     {
-        var usr = ADUsuario.getUsuario(usuario);
+            //SIN PARAMETROS
 
-        if (usr.contraseña != null && usr.contraseña.Equals(password))
+            var usr = ADUsuario.GetUsuarioSinParametros(usuario);
+            //CON PARAMETROS
+            //var usr = oUsuarioDao.GetUserConParametros(usuario);    
+
+            if (usr.contraseña != null && usr.contraseña.Equals(password))
         {
             return usr;
         }
 
         return null;
     }
-}
+        internal bool CrearUsuario(Usuario oUsuario)
+        {
+            return ADUsuario.Create(oUsuario);
+        }
+
+        internal bool ActualizarUsuario(Usuario oUsuarioSelected)
+        {
+            return ADUsuario.Update(oUsuarioSelected);
+        }
+
+        internal bool ModificarEstadoUsuario(Usuario oUsuarioSelected)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object ObtenerUsuario(string usuario)
+        {
+            //SIN PARAMETROS
+            return ADUsuario.GetUsuarioSinParametros(usuario);
+
+            //CON PARAMETROS
+            // return oUsuarioDao.GetUserConParametros(usuario);
+        }
+
+        internal IList<Usuario> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return ADUsuario.GetConFiltrosSinParametros(condiciones);
+        }
+
+        internal IList<Usuario> ConsultarConFiltrosConParametros(Dictionary<string, object> filtros)
+        {
+            return ADUsuario.GetConFiltrosConParametros(filtros);
+        }
+    }
 }

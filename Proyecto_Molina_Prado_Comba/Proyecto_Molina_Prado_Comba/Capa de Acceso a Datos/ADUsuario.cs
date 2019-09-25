@@ -19,47 +19,188 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
     {
         public IList<Usuario> GetUsuarios()
         {
-            List<Usuario> listado = new List<Usuario>();
+            List<Usuario> listadoUsuarios = new List<Usuario>();
 
-            var strSql = "SELECT id_usuario, usuario, from Usuarios  where borrado=0";
+            String strSql = string.Concat(" SELECT id_usuario, ",
+                                          "        usuario, ",
+                                          "        contraseña, ",
+                                          "        p.id_perfil, ",
+                                          "        p.descripcion as perfil",
+                                          "   FROM Usuarios u",
+                                          "  INNER JOIN Perfil p ON u.id_perfil= p.id_perfil WHERE u.borrado=0 ");
 
             var resultadoConsulta = ConexionBD.GetConexionBD().ConsultaSQL(strSql);
 
             foreach (DataRow row in resultadoConsulta.Rows)
             {
-                listado.Add(agregarAGrilla(row));
+                listadoUsuarios.Add(ObjectMapping(row));
             }
 
-            return listado;
+            return listadoUsuarios;
         }
-
-        public Usuario getUsuario(string pUsuario)
+        public Usuario GetUsuarioConParametros(string nombreUsuario)
         {
-            String consultaSql = string.Concat(" SELECT id_usuario, usuario, contraseña ",
-                                               "   FROM Usuarios ",
-                                               "  WHERE borrado=0 and usuario =  '", pUsuario, "'");
+            String strSql = string.Concat(" SELECT id_usuario, ",
+                                          "        usuario, ",
+                                          "        contraseña, ",
+                                          "        p.id_perfil, ",
+                                          "        p.descripcion as perfil",
+                                          "   FROM Usuarios u",
+                                          "  INNER JOIN Perfil p ON u.id_perfil= p.id_perfil ",
+                                          "  WHERE u.usuario =  @usuario AND u.borrado=0 ");
 
-            var resultado = ConexionBD.GetConexionBD().ConsultaSQL(consultaSql);
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("usuario", nombreUsuario);
+            var resultado = ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
 
             if (resultado.Rows.Count > 0)
             {
-                return agregarAGrilla(resultado.Rows[0]);
+                return ObjectMapping(resultado.Rows[0]);
             }
 
             return null;
         }
 
-        private Usuario agregarAGrilla(DataRow row)
+
+        public Usuario GetUsuarioSinParametros(string nombreUsuario)
         {
-            Usuario usuario = new Usuario
+            String strSql = string.Concat(" SELECT id_usuario, ",
+                                          "        usuario, ",
+                                          "        contraseña, ",
+                                          "        p.id_perfil, ",
+                                          "        p.descripcion as perfil",
+                                          "   FROM Usuarios u",
+                                          "  INNER JOIN Perfil p ON u.id_perfil= p.id_perfil ",
+                                          "  WHERE u.borrado =0 ");
+
+            strSql += " AND usuario=" + "'" + nombreUsuario + "'";
+
+
+            var resultado = ConexionBD.GetConexionBD().ConsultaSQL(strSql);
+
+            if (resultado.Rows.Count > 0)
+            {
+                return ObjectMapping(resultado.Rows[0]);
+            }
+
+            return null;
+        }
+
+        public IList<Usuario> GetConFiltrosConParametros(Dictionary<string, object> parametros)
+        {
+
+            List<Usuario> lst = new List<Usuario>();
+            String strSql = string.Concat(" SELECT id_usuario, ",
+                                          "        usuario, ",
+                                          "        contraseña, ",
+                                          "        p.id_perfil, ",
+                                          "        p.descripcion as perfil",
+                                              "   FROM Usuarios u",
+                                              "  INNER JOIN Perfil p ON u.id_perfil= p.id_perfil ",
+                                              "  WHERE u.borrado = 0 ");
+
+
+            if (parametros.ContainsKey("idPerfil"))
+                strSql += " AND (u.id_perfil = @idPerfil) ";
+
+
+            if (parametros.ContainsKey("usuario"))
+                strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
+
+            var resultado = ConexionBD.GetConexionBD().ConsultaSQLConParametros(strSql, parametros);
+
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
+
+
+        public IList<Usuario> GetConFiltrosSinParametros(String condiciones)
+        {
+
+            List<Usuario> lst = new List<Usuario>();
+            String strSql = string.Concat(" SELECT id_usuario, ",
+                                          "        usuario, ",
+                                          "        contraseña, ",
+                                          "        p.id_perfil, ",
+                                          "        p.descripcion as perfil",
+                                              "   FROM Usuarios u",
+                                              "  INNER JOIN Perfil p ON u.id_perfil= p.id_perfil ",
+                                              "  WHERE u.borrado =0 ");
+
+
+            
+
+            var resultado = ConexionBD.GetConexionBD().ConsultaSQL(strSql);
+
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
+
+        internal bool Create(Usuario oUsuario)
+        {
+            //CON PARAMETROS
+            //string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, estado, borrado)" +
+            //                 "     VALUES (@usuario, @password, @email, @id_perfil, 'S', 0)";
+
+            // var parametros = new Dictionary<string, object>();
+            //parametros.Add("usuario", oUsuario.NombreUsuario);
+            //parametros.Add("password", oUsuario.Password);
+            //parametros.Add("email", oUsuario.Email);
+            //parametros.Add("id_perfil", oUsuario.Perfil.IdPerfil);
+
+            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
+            //con parametros
+            //return (DBHelper.GetDBHelper().EjecutarSQLConParametros(str_sql, parametros) == 1);
+
+            //SIN PARAMETROS
+
+            string str_sql = "INSERT INTO Usuarios (usuario, contraseña, id_perfil, borrado)" +
+                            " VALUES (" +
+                            "'" + oUsuario.NombreUsuario + "'" + "," +
+                            "'" + oUsuario.contraseña + "'" + "," +
+                            oUsuario.Perfil.IdPerfil + ",0)";
+                            
+
+
+            return (ConexionBD.GetConexionBD().EjecutarSQL(str_sql) == 1);
+        }
+
+        internal bool Update(Usuario oUsuario)
+        {
+            //SIN PARAMETROS
+
+            string str_sql = "UPDATE Usuarios " +
+                             "SET usuario=" + "'" + oUsuario.NombreUsuario + "'" + "," +
+                             " contraseña=" + "'" + oUsuario.contraseña + "'" + "," +
+                             " id_perfil=" + oUsuario.Perfil.IdPerfil +
+                             " WHERE id_usuario=" + oUsuario.IdUsuario;
+
+            return (ConexionBD.GetConexionBD().EjecutarSQL(str_sql) == 1);
+        }
+
+        private Usuario ObjectMapping(DataRow row)
+        {
+            Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
                 NombreUsuario = row["usuario"].ToString(),
-                contraseña = row.Table.Columns.Contains("contraseña") ? row["contraseña"].ToString() : null
+                contraseña = row.Table.Columns.Contains("contraseña") ? row["contraseña"].ToString() : null,
+                Perfil = new Perfil()
+                {
+                    IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
+                    Nombre = row["perfil"].ToString(),
+                }
             };
 
-            return usuario;
+            return oUsuario;
         }
     }
 
 }
+

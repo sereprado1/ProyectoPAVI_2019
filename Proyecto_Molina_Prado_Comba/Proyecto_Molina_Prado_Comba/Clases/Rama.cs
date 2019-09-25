@@ -12,5 +12,7 @@ namespace Proyecto_Molina_Prado_Comba.Clases
         public string Nombre { get; set; }
         public int EdadInicial { get; set; }
         public int EdadFinal { get; set; }
+
+
     }
 }

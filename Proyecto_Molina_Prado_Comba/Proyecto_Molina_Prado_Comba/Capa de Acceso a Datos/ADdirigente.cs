@@ -25,9 +25,9 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
                                                 "D.apellido, ",
                                                 "D.telefono, ",
                                                 "D.direccion, ",
-                                                "F.descripcion as Funcion, ",
-                                                "C.descripcion as Comunidad, ",
-                                                "R.nombre as Rama",
+                                                "F.descripcion as funcion, ",
+                                                "C.descripcion as comunidad, ",
+                                                "R.nombre as rama",
                                       " FROM Dirigente D ",
                                       "INNER JOIN ComunidadXDirigente X ON D.id_tipo_doc_diri = X.id_tipo_doc_diri AND D.nro_doc_diri = X.nro_doc_diri ",
                                       "INNER JOIN Funcion F ON X.id_funcion = F.id_funcion ",
@@ -47,12 +47,15 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
                                                 "D.apellido, ",
                                                 "D.telefono, ",
                                                 "D.direccion, ",
-                                                "F.descripcion as Funcion ",
-                                                
-                                      "FROM Dirigente D ",
+                                                "F.descripcion as funcion, ",
+                                                "C.descripcion as comunidad, ",
+                                                "R.nombre as rama",
+                                      " FROM Dirigente D ",
                                       "INNER JOIN ComunidadXDirigente X ON D.id_tipo_doc_diri = X.id_tipo_doc_diri AND D.nro_doc_diri = X.nro_doc_diri ",
                                       "INNER JOIN Funcion F ON X.id_funcion = F.id_funcion ",
-                                      
+                                      "INNER JOIN Comunidad C on X.id_comunidad = C.id_comunidad ",
+                                      "INNER JOIN Rama R on C.id_rama = R.id_rama ",
+
                                        "WHERE D.borrado=0 AND 1=1");
 
             
@@ -84,12 +87,15 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
                                                 "D.apellido, ",
                                                 "D.telefono, ",
                                                 "D.direccion, ",
-                                                "F.descripcion as Funcion ",
-                                                
-                                      "FROM Dirigente D ",
+                                                "F.descripcion as funcion, ",
+                                                "C.descripcion as comunidad, ",
+                                                "R.nombre as rama",
+                                      " FROM Dirigente D ",
                                       "INNER JOIN ComunidadXDirigente X ON D.id_tipo_doc_diri = X.id_tipo_doc_diri AND D.nro_doc_diri = X.nro_doc_diri ",
                                       "INNER JOIN Funcion F ON X.id_funcion = F.id_funcion ",
-                                      
+                                      "INNER JOIN Comunidad C on X.id_comunidad = C.id_comunidad ",
+                                      "INNER JOIN Rama R on C.id_rama = R.id_rama ",
+
                                        "WHERE D.borrado=0 AND 1=1 ");
 
             strSql += sqlcondiciones;
@@ -115,9 +121,17 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
             dirigente.Nombre = row["nombre"].ToString();
             dirigente.Apellido = row["apellido"].ToString();
             dirigente.Telefono = row["telefono"].ToString();
-            dirigente.Direccion = row["direccion"].ToString();
-            
-                                   
+            dirigente.Direccion = row["Direccion"].ToString();
+
+            dirigente.funcion = new Funcion();
+            dirigente.funcion.Descripcion = row["funcion"].ToString();
+
+            dirigente.Comunidad = new Comunidad();
+            dirigente.Comunidad.Descripcion = row["comunidad"].ToString();
+
+            dirigente.rama = new Rama();
+            dirigente.rama.Nombre = row["rama"].ToString();
+
             return dirigente;
         }
     }

@@ -10,5 +10,8 @@ namespace Proyecto_Molina_Prado_Comba.Clases
     {
         public int IdFuncion { get; set; }
         public string Descripcion { get; set; }
+
+        
+        
     }
 }

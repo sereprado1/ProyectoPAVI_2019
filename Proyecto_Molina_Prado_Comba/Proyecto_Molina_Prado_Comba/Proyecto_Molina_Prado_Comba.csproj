@@ -48,10 +48,12 @@
   <ItemGroup>
     <Compile Include="Capa de Acceso a Datos\ADDescuento.cs" />
     <Compile Include="Capa de Acceso a Datos\ADdirigente.cs" />
+    <Compile Include="Capa de Acceso a Datos\ADperfil.cs" />
     <Compile Include="Capa de Acceso a Datos\ADUsuario.cs" />
     <Compile Include="Capa de Acceso a Datos\ConexionBD.cs" />
     <Compile Include="Capa de Logica de Negocio\SDescuento.cs" />
     <Compile Include="Capa de Logica de Negocio\SDirigente.cs" />
+    <Compile Include="Capa de Logica de Negocio\SPerfil.cs" />
     <Compile Include="Capa de Logica de Negocio\SUsuario.cs" />
     <Compile Include="Capa GUI\Afiliacion\frmConsultarAfiliado.cs">
       <SubType>Form</SubType>
@@ -59,17 +61,17 @@
     <Compile Include="Capa GUI\Afiliacion\frmConsultarAfiliado.Designer.cs">
       <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capa GUI\Descuento\frmConsultarDescuento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capa GUI\Descuento\frmConsultarDescuento.Designer.cs">
-      <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Capa GUI\Descuento\frmRegistrarDescuento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Capa GUI\Descuento\frmRegistrarDescuento.Designer.cs">
       <DependentUpon>frmRegistrarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa GUI\Dirigente\ABMDirigente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa GUI\Dirigente\ABMDirigente.Designer.cs">
+      <DependentUpon>ABMDirigente.cs</DependentUpon>
     </Compile>
     <Compile Include="Capa GUI\Dirigente\frmConsultarDirigente.cs">
       <SubType>Form</SubType>
@@ -77,17 +79,35 @@
     <Compile Include="Capa GUI\Dirigente\frmConsultarDirigente.Designer.cs">
       <DependentUpon>frmConsultarDirigente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capa GUI\Dirigente\frmDetalleConsultarDirigente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa GUI\Dirigente\frmDetalleConsultarDirigente.Designer.cs">
+      <DependentUpon>frmDetalleConsultarDirigente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capa GUI\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Capa GUI\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capa GUI\Login\frmABMUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa GUI\Login\frmABMUsuario.Designer.cs">
+      <DependentUpon>frmABMUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capa GUI\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Capa GUI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa GUI\Login\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa GUI\Login\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Afiliacion.cs" />
     <Compile Include="Clases\Comunidad.cs" />
@@ -102,20 +122,29 @@
     <EmbeddedResource Include="Capa GUI\Afiliacion\frmConsultarAfiliado.resx">
       <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capa GUI\Descuento\frmConsultarDescuento.resx">
-      <DependentUpon>frmConsultarDescuento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\Descuento\frmRegistrarDescuento.resx">
       <DependentUpon>frmRegistrarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa GUI\Dirigente\ABMDirigente.resx">
+      <DependentUpon>ABMDirigente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\Dirigente\frmConsultarDirigente.resx">
       <DependentUpon>frmConsultarDirigente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capa GUI\Dirigente\frmDetalleConsultarDirigente.resx">
+      <DependentUpon>frmDetalleConsultarDirigente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capa GUI\Login\frmABMUsuario.resx">
+      <DependentUpon>frmABMUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa GUI\Login\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,6 +174,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton editar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton eliminar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

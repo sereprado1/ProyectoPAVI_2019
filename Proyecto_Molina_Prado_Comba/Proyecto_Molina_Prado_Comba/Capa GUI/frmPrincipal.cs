@@ -19,8 +19,7 @@ namespace Proyecto_Molina_Prado_Comba.formularios
 
         private void ConsultarDirigenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formularios.Dirigente.ConsultarDirigente frmConsultarDirigente = new formularios.Dirigente.ConsultarDirigente();
-            frmConsultarDirigente.ShowDialog();
+            
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -29,23 +28,23 @@ namespace Proyecto_Molina_Prado_Comba.formularios
             formularios.Login.frmLogin login = new formularios.Login.frmLogin();
             login.ShowDialog();
         }
-
-        private void ConsultarDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void DirigentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formularios.Descuento.frmConsultarDescuento frmConsultarDescuento = new formularios.Descuento.frmConsultarDescuento();
-            frmConsultarDescuento.ShowDialog();
-
+            formularios.Dirigente.ConsultarDirigente frmConsultarDirigente = new formularios.Dirigente.ConsultarDirigente();
+            frmConsultarDirigente.ShowDialog();
         }
 
-        private void consultarAfiliaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AfiliaciónToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             formularios.Afiliacion.frmConsultarAfiliado frmConsultarAfiliado = new formularios.Afiliacion.frmConsultarAfiliado();
             frmConsultarAfiliado.ShowDialog();
         }
 
-        private void ingresarDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConsultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Capa_GUI.Login.frmUsuarios frmUsuarios = new Capa_GUI.Login.frmUsuarios();
+            frmUsuarios.ShowDialog();
         }
     }
 }

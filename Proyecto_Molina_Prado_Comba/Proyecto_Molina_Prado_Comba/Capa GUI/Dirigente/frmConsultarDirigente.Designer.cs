@@ -38,6 +38,10 @@
             this.dgvDirigente = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirigente)).BeginInit();
@@ -85,7 +89,7 @@
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 42);
+            this.panel1.Location = new System.Drawing.Point(39, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 107);
             this.panel1.TabIndex = 5;
@@ -111,15 +115,15 @@
             // dgvDirigente
             // 
             this.dgvDirigente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDirigente.Location = new System.Drawing.Point(12, 188);
+            this.dgvDirigente.Location = new System.Drawing.Point(12, 163);
             this.dgvDirigente.Name = "dgvDirigente";
-            this.dgvDirigente.Size = new System.Drawing.Size(308, 275);
+            this.dgvDirigente.Size = new System.Drawing.Size(335, 228);
             this.dgvDirigente.TabIndex = 6;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnBuscar.Location = new System.Drawing.Point(234, 150);
+            this.btnBuscar.Location = new System.Drawing.Point(261, 125);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(86, 32);
             this.btnBuscar.TabIndex = 7;
@@ -130,13 +134,54 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnLimpiar.Location = new System.Drawing.Point(12, 150);
+            this.btnLimpiar.Location = new System.Drawing.Point(176, 125);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(79, 32);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDetalle.Location = new System.Drawing.Point(261, 397);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(86, 32);
+            this.btnDetalle.TabIndex = 10;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.BtnDetalle_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEliminar.Image = global::Proyecto_Molina_Prado_Comba.Properties.Resources.Boton_eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(102, 397);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(31, 34);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEditar.Image = global::Proyecto_Molina_Prado_Comba.Properties.Resources.Boton_editar;
+            this.btnEditar.Location = new System.Drawing.Point(56, 396);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(31, 34);
+            this.btnEditar.TabIndex = 12;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnNuevo.Image = global::Proyecto_Molina_Prado_Comba.Properties.Resources.Boton_nuevo;
+            this.btnNuevo.Location = new System.Drawing.Point(12, 397);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(31, 34);
+            this.btnNuevo.TabIndex = 11;
+            this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // btnVolver
             // 
@@ -153,7 +198,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 475);
+            this.ClientSize = new System.Drawing.Size(359, 438);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);
@@ -182,5 +231,9 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ComboBox cmbFuncion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
