@@ -63,7 +63,7 @@ namespace Proyecto_Molina_Prado_Comba.Capa_GUI.Login
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-
+            dgvUsuarios.DataSource = null;
             String condiciones = "";
             var filters = new Dictionary<string, object>();
 
@@ -79,7 +79,7 @@ namespace Proyecto_Molina_Prado_Comba.Capa_GUI.Login
                 if (txtNombre.Text != string.Empty)
                 {
                     filters.Add("usuario", txtNombre.Text);
-                    condiciones += "AND u.usuario=" + "'" + txtNombre.Text + "'";
+                    condiciones += "AND u.usuario LIKE " + "'%" + txtNombre.Text + "%'";
                 }
 
                 if (filters.Count > 0)

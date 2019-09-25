@@ -47,7 +47,7 @@ public class SUsuario
 
         internal bool ModificarEstadoUsuario(Usuario oUsuarioSelected)
         {
-            throw new NotImplementedException();
+            return ADUsuario.Delete(oUsuarioSelected);
         }
 
         internal object ObtenerUsuario(string usuario)

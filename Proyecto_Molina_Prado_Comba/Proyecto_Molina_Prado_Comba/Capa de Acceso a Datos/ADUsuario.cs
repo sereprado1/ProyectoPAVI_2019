@@ -128,7 +128,7 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
                                           "        p.descripcion as perfil",
                                               "   FROM Usuarios u",
                                               "  INNER JOIN Perfil p ON u.id_perfil= p.id_perfil ",
-                                              "  WHERE u.borrado =0 ");
+                                              "  WHERE u.borrado =0 " + condiciones);
 
 
             
@@ -179,6 +179,17 @@ namespace Proyecto_Molina_Prado_Comba.Capa_de_Acceso_a_Datos
                              "SET usuario=" + "'" + oUsuario.NombreUsuario + "'" + "," +
                              " contraseña=" + "'" + oUsuario.contraseña + "'" + "," +
                              " id_perfil=" + oUsuario.Perfil.IdPerfil +
+                             " WHERE id_usuario=" + oUsuario.IdUsuario;
+
+            return (ConexionBD.GetConexionBD().EjecutarSQL(str_sql) == 1);
+        }
+
+        internal bool Delete(Usuario oUsuario)
+        {
+            //SIN PARAMETROS
+
+            string str_sql = "UPDATE Usuarios " +
+                             "SET borrado=1" +
                              " WHERE id_usuario=" + oUsuario.IdUsuario;
 
             return (ConexionBD.GetConexionBD().EjecutarSQL(str_sql) == 1);
