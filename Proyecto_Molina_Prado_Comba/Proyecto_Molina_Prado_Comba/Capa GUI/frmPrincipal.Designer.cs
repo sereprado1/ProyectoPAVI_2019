@@ -64,13 +64,13 @@
             this.consultarBeneficiarioToolStripMenuItem,
             this.cobroToolStripMenuItem});
             this.beneficiariosToolStripMenuItem.Name = "beneficiariosToolStripMenuItem";
-            this.beneficiariosToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.beneficiariosToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.beneficiariosToolStripMenuItem.Text = "Beneficiarios";
             // 
             // consultarBeneficiarioToolStripMenuItem
             // 
             this.consultarBeneficiarioToolStripMenuItem.Name = "consultarBeneficiarioToolStripMenuItem";
-            this.consultarBeneficiarioToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.consultarBeneficiarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarBeneficiarioToolStripMenuItem.Text = "Consultar Beneficiario";
             // 
             // cobroToolStripMenuItem
@@ -79,19 +79,19 @@
             this.afiliaciónToolStripMenuItem,
             this.cuotasToolStripMenuItem});
             this.cobroToolStripMenuItem.Name = "cobroToolStripMenuItem";
-            this.cobroToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.cobroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cobroToolStripMenuItem.Text = "Cobro";
             // 
             // afiliaciónToolStripMenuItem
             // 
             this.afiliaciónToolStripMenuItem.Name = "afiliaciónToolStripMenuItem";
-            this.afiliaciónToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.afiliaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.afiliaciónToolStripMenuItem.Text = "Afiliación";
             // 
             // cuotasToolStripMenuItem
             // 
             this.cuotasToolStripMenuItem.Name = "cuotasToolStripMenuItem";
-            this.cuotasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.cuotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cuotasToolStripMenuItem.Text = "Cuotas";
             // 
             // ramasToolStripMenuItem
@@ -100,20 +100,20 @@
             this.dirigentesToolStripMenuItem,
             this.comunidadesToolStripMenuItem});
             this.ramasToolStripMenuItem.Name = "ramasToolStripMenuItem";
-            this.ramasToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ramasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.ramasToolStripMenuItem.Text = "Ramas";
             // 
             // dirigentesToolStripMenuItem
             // 
             this.dirigentesToolStripMenuItem.Name = "dirigentesToolStripMenuItem";
-            this.dirigentesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.dirigentesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.dirigentesToolStripMenuItem.Text = "Consultar dirigentes";
             this.dirigentesToolStripMenuItem.Click += new System.EventHandler(this.DirigentesToolStripMenuItem_Click);
             // 
             // comunidadesToolStripMenuItem
             // 
             this.comunidadesToolStripMenuItem.Name = "comunidadesToolStripMenuItem";
-            this.comunidadesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.comunidadesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.comunidadesToolStripMenuItem.Text = "Consultar comunidades";
             // 
             // afiliaciónToolStripMenuItem1
@@ -122,34 +122,35 @@
             this.afiliaciónToolStripMenuItem2,
             this.descuentoToolStripMenuItem});
             this.afiliaciónToolStripMenuItem1.Name = "afiliaciónToolStripMenuItem1";
-            this.afiliaciónToolStripMenuItem1.Size = new System.Drawing.Size(69, 20);
+            this.afiliaciónToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.afiliaciónToolStripMenuItem1.Text = "Afiliación";
             // 
             // afiliaciónToolStripMenuItem2
             // 
             this.afiliaciónToolStripMenuItem2.Name = "afiliaciónToolStripMenuItem2";
-            this.afiliaciónToolStripMenuItem2.Size = new System.Drawing.Size(183, 22);
+            this.afiliaciónToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.afiliaciónToolStripMenuItem2.Text = "Consultar afiliación";
             this.afiliaciónToolStripMenuItem2.Click += new System.EventHandler(this.AfiliaciónToolStripMenuItem2_Click);
             // 
             // descuentoToolStripMenuItem
             // 
             this.descuentoToolStripMenuItem.Name = "descuentoToolStripMenuItem";
-            this.descuentoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.descuentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.descuentoToolStripMenuItem.Text = "Consultar descuento";
+            this.descuentoToolStripMenuItem.Click += new System.EventHandler(this.descuentoToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarUsuariosToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // consultarUsuariosToolStripMenuItem
             // 
             this.consultarUsuariosToolStripMenuItem.Name = "consultarUsuariosToolStripMenuItem";
-            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.consultarUsuariosToolStripMenuItem.Text = "Consultar usuarios";
             this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ConsultarUsuariosToolStripMenuItem_Click);
             // 

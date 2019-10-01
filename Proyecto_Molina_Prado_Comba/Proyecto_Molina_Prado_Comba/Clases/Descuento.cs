@@ -11,5 +11,10 @@ namespace Proyecto_Molina_Prado_Comba.Clases
         public int IdDescuento { get; set; }
         public string Descripcion { get; set; }
         public float Porcentaje { get; set; }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

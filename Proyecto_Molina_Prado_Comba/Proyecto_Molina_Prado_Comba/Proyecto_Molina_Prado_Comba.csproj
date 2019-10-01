@@ -61,11 +61,17 @@
     <Compile Include="Capa GUI\Afiliacion\frmConsultarAfiliado.Designer.cs">
       <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capa GUI\Descuento\frmRegistrarDescuento.cs">
+    <Compile Include="Capa GUI\Descuento\frmABMDescuento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capa GUI\Descuento\frmRegistrarDescuento.Designer.cs">
-      <DependentUpon>frmRegistrarDescuento.cs</DependentUpon>
+    <Compile Include="Capa GUI\Descuento\frmABMDescuento.Designer.cs">
+      <DependentUpon>frmABMDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa GUI\Descuento\frmDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa GUI\Descuento\frmDescuento.Designer.cs">
+      <DependentUpon>frmDescuento.cs</DependentUpon>
     </Compile>
     <Compile Include="Capa GUI\Dirigente\ABMDirigente.cs">
       <SubType>Form</SubType>
@@ -122,8 +128,11 @@
     <EmbeddedResource Include="Capa GUI\Afiliacion\frmConsultarAfiliado.resx">
       <DependentUpon>frmConsultarAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capa GUI\Descuento\frmRegistrarDescuento.resx">
-      <DependentUpon>frmRegistrarDescuento.cs</DependentUpon>
+    <EmbeddedResource Include="Capa GUI\Descuento\frmABMDescuento.resx">
+      <DependentUpon>frmABMDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa GUI\Descuento\frmDescuento.resx">
+      <DependentUpon>frmDescuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa GUI\Dirigente\ABMDirigente.resx">
       <DependentUpon>ABMDirigente.cs</DependentUpon>

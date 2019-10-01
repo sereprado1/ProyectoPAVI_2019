@@ -46,5 +46,11 @@ namespace Proyecto_Molina_Prado_Comba.formularios
             Capa_GUI.Login.frmUsuarios frmUsuarios = new Capa_GUI.Login.frmUsuarios();
             frmUsuarios.ShowDialog();
         }
+
+        private void descuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_GUI.Descuento.frmDescuento frmDescuento = new Capa_GUI.Descuento.frmDescuento();
+            frmDescuento.ShowDialog();
+        }
     }
 }
