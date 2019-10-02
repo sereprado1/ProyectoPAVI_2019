@@ -14,158 +14,171 @@ namespace Proyecto_Molina_Prado_Comba.Capa_GUI.Descuento
 {
     public partial class frmABMDescuento : Form
     {
-        //private FormMode formMode = FormMode.insert;
+        private FormMode formMode = FormMode.insert;
 
-        //private readonly SDescuento sDescuento;
-        //private Descuento oDescuentoSelected;
-        //public frmABMDescuento()
-        //{
-        //    InitializeComponent();
-        //    sDescuento = new SDescuento();
-        //}
-        //public enum FormMode
-        //{
-        //    insert,
-        //    update,
-        //    delete
-        //}
+        private readonly SDescuento sDescuento;
+        private Clases.Descuento oDescuentoSelected;
+        public frmABMDescuento()
+        {
+            InitializeComponent();
+            sDescuento = new SDescuento();
+        }
+        public enum FormMode
+        {
+            insert,
+            update,
+            delete
+        }
 
+        public void SeleccionarDescuento(FormMode op, Clases.Descuento descuentoSelected)
+        {
+            formMode = op;
+            oDescuentoSelected = descuentoSelected;
+        }
 
+        private void MostrarDatos()
+        {
+            if (oDescuentoSelected != null)
+            {
+                txtDescripcion.Text = oDescuentoSelected.Descripcion;
+                txtPorcentaje.Text = oDescuentoSelected.Porcentaje.ToString();
+            }
+        }
 
-        //public void SeleccionarDescuento(FormMode op, Descuento descuentoSelected)
-        //{
-        //    formMode = op;
-        //    oDescuentoSelected = descuentoSelected;
-        //}
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        if (ExisteDescuento() == false)
+                        {
+                            if (ValidarCampos())
+                            {
+                                var oDescuento = new Clases.Descuento();
+                                oDescuento.Descripcion = txtDescripcion.Text;
+                                oDescuento.Porcentaje = System.Convert.ToSingle(double.Parse(txtPorcentaje.Text.Replace('.', ',')));
 
-        //private void MostrarDatos()
-        //{
-        //    if (oDescuentoSelected != null)
-        //    {
-        //        txtDescripcion.Text = oDescuentoSelected.Descripcion;
-        //        txtPorcentaje.Text = oDescuentoSelected.Porcentaje;
-        //    }
-        //}
+                                    if (sDescuento.CrearDescuento(oDescuento))
+                                    {
+                                        MessageBox.Show("Descuento creado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
+                                    }
+                                }
+                            }
+                            else
+                                MessageBox.Show("Ya existe el descuento especificado. Ingrese uno nuevo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        }
 
-        //private void BtnAceptar_Click(object sender, EventArgs e)
-        //{
-        //    switch (formMode)
-        //    {
-        //        case FormMode.insert:
-        //            {
-        //                if (ExisteDescuento() == false)
-        //                {
-        //                    if (ValidarCampos())
-        //                    {
-        //                        var oDescuento = new Descuento();
-        //                        oDescuento.Descripcion = txtDescripcion.Text;
-        //                        oDescuento.Porcentaje = txtPorcentaje.Text;
+                    case FormMode.update:
+                        {
+                            if (ValidarCampos())
+                            {
+                                oDescuentoSelected.Descripcion = txtDescripcion.Text;
+                                oDescuentoSelected.Porcentaje = System.Convert.ToSingle(double.Parse(txtPorcentaje.Text.Replace('.', ',')));
 
-        //                        if (sDescuento.CrearDescuento(oDescuento))
-        //                        {
-        //                            MessageBox.Show("Usuario creado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                            this.Close();
-        //                        }
-        //                    }
-        //                }
-        //                else
-        //                    MessageBox.Show("Ya existe el nombre de usuario. Ingrese uno nuevo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                break;
-        //            }
+                                if (sDescuento.ActualizarDescuento(oDescuentoSelected))
+                                {
+                                    MessageBox.Show("Descuento modificado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Dispose();
+                                }
+                                else
+                                    MessageBox.Show("Error al modificar descuento", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
 
-        //        case FormMode.update:
-        //            {
-        //                if (ValidarCampos())
-        //                {
-        //                    oDescuentoSelected.Descripcion = txtDescripcion.Text;
-        //                    oDescuentoSelected.Porcentaje = txtPorcentaje.Text;
+                            break;
+                        }
 
-        //                    if (sDescuento.ActualizarDescuento(oDescuentoSelected))
-        //                    {
-        //                        MessageBox.Show("Usuario modificado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                        this.Dispose();
-        //                    }
-        //                    else
-        //                        MessageBox.Show("Error al modificar usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                }
+                    case FormMode.delete:
+                        {
+                            if (MessageBox.Show("¿Seguro que desea eliminar el descuento?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                            {
 
-        //                break;
-        //            }
+                                if (sDescuento.ModificarEstadoDescuento(oDescuentoSelected))
+                                {
+                                    MessageBox.Show("Descuento eliminado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                    MessageBox.Show("Error al eliminar descuento", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
 
-        //        case FormMode.delete:
-        //            {
-        //                if (MessageBox.Show("¿Seguro que desea eliminar el usuario?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-        //                {
+                            break;
+                        }
+                }
+            }
 
-        //                    if (sDescuento.ModificarEstadoDescuento(oDescuentoSelected))
-        //                    {
-        //                        MessageBox.Show("Usuario eliminado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                        this.Close();
-        //                    }
-        //                    else
-        //                        MessageBox.Show("Error al eliminar usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                }
+        private bool ValidarCampos()
+        {
+            // campos obligatorios
+            if (txtDescripcion.Text == string.Empty && txtPorcentaje.Text == string.Empty)
+            {
+                txtDescripcion.BackColor = Color.Red;
+                txtPorcentaje.BackColor = Color.Red;
+                txtDescripcion.Focus();
+                return false;
+            }
+            else
+                if (txtDescripcion.Text == string.Empty)
+                {
+                txtDescripcion.BackColor = Color.Red;
+                txtDescripcion.Focus();
+                return false;
+                }
+                else
+                    if (txtPorcentaje.Text == string.Empty)
+                    {
+                        txtPorcentaje.BackColor = Color.Red;
+                        txtPorcentaje.Focus();
+                        return false;
+                    }
+                    else
+                        txtDescripcion.BackColor = Color.White;
+                        txtPorcentaje.BackColor = Color.White;
 
-        //                break;
-        //            }
-        //    }
-        //}
+                        return true;
+        }
 
-        //private bool ValidarCampos()
-        //{
-        //    // campos obligatorios
-        //    if (txtDescripcion.Text == string.Empty)
-        //    {
-        //        txtDescripcion.BackColor = Color.Red;
-        //        txtDescripcion.Focus();
-        //        return false;
-        //    }
-        //    else
-        //        txtDescripcion.BackColor = Color.White;
+        private bool ExisteDescuento()
+        {
+            return sDescuento.ObtenerDescuento(txtDescripcion.Text) != null;
+        }
 
-        //    return true;
-        //}
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        //private bool ExisteDescuento()
-        //{
-        //    return sDescuento.ObtenerDescuento(txtDescripcion.Text) != null;
-        //}
+        private void FrmABMDescuento_Load(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        this.Text = "Nuevo Descuento";
+                        break;
+                    }
 
-        //private void BtnCancelar_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //}
+                case FormMode.update:
+                    {
+                        this.Text = "Actualizar Descuento";
+                        MostrarDatos();
+                        txtDescripcion.Enabled = true;
+                        txtPorcentaje.Enabled = true;
+                        break;
+                    }
 
-
-
-        //private void frmABMDescuento_Load(object sender, EventArgs e)
-        //{
-        //    switch (formMode)
-        //    {
-        //        case FormMode.insert:
-        //            {
-        //                this.Text = "Nuevo Descuento";
-        //                break;
-        //            }
-
-        //        case FormMode.update:
-        //            {
-        //                this.Text = "Actualizar Descuento";
-        //                MostrarDatos();
-        //                txtDescripcion.Enabled = true;
-        //                txtPorcentaje.Enabled = true;
-        //                break;
-        //            }
-
-        //        case FormMode.delete:
-        //            {
-        //                MostrarDatos();
-        //                this.Text = "Habilitar/Deshabilitar Descuento";
-        //                txtDescripcion.Enabled = false;
-        //                txtPorcentaje.Enabled = false;
-        //                break;
-        //            }
-        //    }
-        //}
+                case FormMode.delete:
+                    {
+                        MostrarDatos();
+                        this.Text = "Habilitar/Deshabilitar Descuento";
+                        txtDescripcion.Enabled = false;
+                        txtPorcentaje.Enabled = false;
+                        break;
+                    }
+            }
+        }
+                                          
     }
 }

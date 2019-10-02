@@ -122,7 +122,7 @@ namespace Proyecto_Molina_Prado_Comba.Capa_GUI.Login
         private bool ValidarCampos()
         {
             // campos obligatorios
-            if (txtNombre.Text == string.Empty)
+            if (txtNombre.Text == string.Empty || txtContraseña.Text == string.Empty || txtRepContraseña.Text == string.Empty)
             {
                 txtNombre.BackColor = Color.Red;
                 txtNombre.Focus();

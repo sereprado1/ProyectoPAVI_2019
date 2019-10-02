@@ -87,6 +87,7 @@
             this.btnConsultar.TabIndex = 8;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // dgvDescuento
             // 
@@ -95,6 +96,7 @@
             this.dgvDescuento.Name = "dgvDescuento";
             this.dgvDescuento.Size = new System.Drawing.Size(319, 177);
             this.dgvDescuento.TabIndex = 7;
+            this.dgvDescuento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDescuento_CellClick);
             // 
             // chkTodos
             // 
@@ -106,6 +108,7 @@
             this.chkTodos.TabIndex = 6;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
+            this.chkTodos.CheckedChanged += new System.EventHandler(this.ChkTodos_CheckedChanged);
             // 
             // txtDescripcion
             // 
@@ -134,6 +137,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(31, 34);
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnVolver
             // 
@@ -144,6 +148,7 @@
             this.btnVolver.Size = new System.Drawing.Size(31, 34);
             this.btnVolver.TabIndex = 17;
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // btnEditar
             // 
@@ -154,6 +159,7 @@
             this.btnEditar.Size = new System.Drawing.Size(31, 34);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -164,6 +170,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(31, 34);
             this.btnNuevo.TabIndex = 18;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // frmDescuento
             // 
@@ -177,6 +184,7 @@
             this.Controls.Add(this.btnEditar);
             this.Name = "frmDescuento";
             this.Text = "frmRegistrarDescuento";
+            this.Load += new System.EventHandler(this.FrmDescuento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescuento)).EndInit();

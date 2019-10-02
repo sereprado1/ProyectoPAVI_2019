@@ -45,6 +45,7 @@
             this.btnAceptar.TabIndex = 25;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -55,13 +56,13 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // txtPorcentaje
             // 
             this.txtPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPorcentaje.Location = new System.Drawing.Point(170, 64);
             this.txtPorcentaje.Name = "txtPorcentaje";
-            this.txtPorcentaje.PasswordChar = '*';
             this.txtPorcentaje.Size = new System.Drawing.Size(169, 26);
             this.txtPorcentaje.TabIndex = 21;
             // 
@@ -93,7 +94,7 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Descripcion";
             // 
-            // ABMDescuento
+            // frmABMDescuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,8 +105,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
-            this.Name = "ABMDescuento";
+            this.Name = "frmABMDescuento";
             this.Text = "ABMDescuento";
+            this.Load += new System.EventHandler(this.FrmABMDescuento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
